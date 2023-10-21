@@ -2,4 +2,4 @@
 Hey, me Aritra
 displayed all numbers programs of Java programming language.
 
-© Aritra Ghosh 2023
+Author - © Aritra Ghosh 2023
