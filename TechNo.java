@@ -1,20 +1,35 @@
-/** tech no has evn no of digits. if the no is split in two equal halves, then the squares of these halves is equal to the no itself
- 
- */
-public class Tech_No
-{
-    int i,a,b,s;
-    void display()
-    {
-        for(i=1000;i<=9999;i++)
-        {
-            a=i%100;
-            b=i/100;
-            s=a+b;
-            if(s*s==i)
-            {
-                System.out.println(i);
-            }
+import java.util.Scanner;
+
+public class TechNumberChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        scanner.close();
+
+        if (isTechNumber(number)) {
+            System.out.println(number + " is a tech number.");
+        } else {
+            System.out.println(number + " is not a tech number.");
         }
+    }
+
+    public static boolean isTechNumber(int num) {
+        int evenCount = 0;
+        int oddCount = 0;
+
+        while (num > 0) {
+            int digit = num % 10;
+
+            if (digit % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
+            }
+
+            num = num / 10;
+        }
+
+        return evenCount == oddCount;
     }
 }
