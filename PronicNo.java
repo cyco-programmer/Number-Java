@@ -1,4 +1,3 @@
-// pronic no is the no which is the product of two consecutive integers
 import java.util.*;
 public class Pronic_No
 {
