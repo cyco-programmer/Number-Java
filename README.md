@@ -2,7 +2,7 @@
 Number-Java
 
 ## Description
-Number-Java is a set of program where all numbers codes has been stored. We will update github repo regularly basic on my profile, this is suitable for open-source projects where you can contribute
+Number-Java: A versatile Java repository for numeric computations, data analysis, and mathematical operations. Explore a collection of Java classes and utilities to handle numbers, statistics, and mathematical functions efficiently. Whether you're a developer, data scientist, or math enthusiast, Number-Java simplifies your numerical tasks and empowers your Java projects.
 
 ## License
 MIT
