@@ -1,80 +1,29 @@
 import java.util.Scanner;
 
-/**
- * This class enters a number from the user and displays if
- * it is palindrome or not.
- * A number is palindrome if it is same when read from both
- * sides.
- * @author Sayan Biswas
- * @version 05.04.2022
- */
-public class PalindromeNumber {
-
-    /**
-     * Stores number
-     */
-    private int x;
-
-    /**
-     * Initializes instance variables
-     */
-    private PalindromeNumber() {
-        x=0;
-    }
-
-    /**
-     * Inputs a number from user
-     */
-    private void input() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a number: ");
-        x=Integer.parseInt(sc.next());
-    }
-
-    /**
-     * Checks if a number is palindrome or not.
-     * @param n Number to be checked
-     * @return true or false
-     */
-    private boolean palindromeCheck(int n)
-    {
-        return n == reverse(n);
-    }
-
-    /**
-     * Reverses a number
-     * @param n Number to be reversed
-     * @return Reversed number
-     */
-    private int reverse(int n)
-    {
-        int sum=0, r;
-        while(n>0)
-        {
-            r=n%10;
-            sum=(sum*10)+r;
-            n=n/10;
-        }
-        return sum;
-    }
-
-    /**
-     * Displays the result
-     * @param x Signifies number is palindrome or not.
-     */
-    private void display(boolean x) {
-
-        System.out.println(x ? "Number is palindrome." :
-                "Number is not palindrome.");
-    }
-
-    /**
-     * Calls other methods
-     * @param args Arguments passed to main method
-     */
+public class PalindromeNumberChecker {
     public static void main(String[] args) {
-        PalindromeNumber ob = new PalindromeNumber();
-        ob.input();
-        ob.display(ob.palindromeCheck(ob.x));
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        scanner.close();
+
+        if (isPalindrome(number)) {
+            System.out.println(number + " is a palindrome number.");
+        } else {
+            System.out.println(number + " is not a palindrome number.");
+        }
+    }
+
+    public static boolean isPalindrome(int num) {
+        int originalNumber = num;
+        int reversedNumber = 0;
+
+        while (num != 0) {
+            int remainder = num % 10;
+            reversedNumber = reversedNumber * 10 + remainder;
+            num = num / 10;
+        }
+
+        return originalNumber == reversedNumber;
     }
 }
